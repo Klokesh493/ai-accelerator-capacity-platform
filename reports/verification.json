@@ -1,0 +1,22 @@
+{
+  "tests": 27,
+  "replay_scenarios": 5,
+  "model_runs": 2,
+  "http_demo": {
+    "decision": "capacity_ready",
+    "state": "exported",
+    "mode": "replay",
+    "files": [
+      "capacity-reservation.json"
+    ],
+    "hec": {
+      "accepted": 3,
+      "attempted": 3,
+      "pending": 0
+    }
+  },
+  "promtool_rules": "passed",
+  "config_parse": "passed",
+  "live_prometheus_scrape": "passed",
+  "source_sha256": "216878d35f96d8eb7808f8ec5c16878c2bdc933d682aac60abb86f547e2beac1"
+}

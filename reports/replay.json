@@ -1,0 +1,32 @@
+[
+  {
+    "name": "healthy",
+    "expected": "capacity_ready",
+    "decision": "capacity_ready",
+    "passed": true
+  },
+  {
+    "name": "cost-limit",
+    "expected": "capacity_hold",
+    "decision": "capacity_hold",
+    "passed": true
+  },
+  {
+    "name": "stale-benchmark",
+    "expected": "capacity_hold",
+    "decision": "capacity_hold",
+    "passed": true
+  },
+  {
+    "name": "latency-regression",
+    "expected": "capacity_hold",
+    "decision": "capacity_hold",
+    "passed": true
+  },
+  {
+    "name": "memory-exhaustion",
+    "expected": "capacity_hold",
+    "decision": "capacity_hold",
+    "passed": true
+  }
+]

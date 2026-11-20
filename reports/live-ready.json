@@ -1,0 +1,114 @@
+{
+  "allocations": [
+    {
+      "gpu": "L4",
+      "node": "gpu-node-a",
+      "reserved_tps": 800,
+      "workload": "chat"
+    },
+    {
+      "gpu": "L4",
+      "node": "gpu-node-a",
+      "reserved_tps": 800,
+      "workload": "chat"
+    }
+  ],
+  "citations": [
+    "fleet",
+    "benchmarks",
+    "demand"
+  ],
+  "decision": "capacity_ready",
+  "evidence": {
+    "benchmarks": {
+      "data": {
+        "max_age_seconds": 3600,
+        "now": 10000,
+        "samples": [
+          {
+            "gpu": "L4",
+            "measured_at": 9900,
+            "model": "assistant",
+            "p95_ms": 100,
+            "tokens_per_second": 1000
+          },
+          {
+            "gpu": "A100",
+            "measured_at": 9900,
+            "model": "assistant",
+            "p95_ms": 90,
+            "tokens_per_second": 2200
+          }
+        ]
+      },
+      "id": "benchmarks",
+      "sha256": "4bf4dabb46d19cc47012a8a3dcba8def223ceea850eb73482c3f839d948609b3"
+    },
+    "demand": {
+      "data": {
+        "max_hourly_cents": 500,
+        "workloads": [
+          {
+            "id": "chat",
+            "max_p95_ms": 120,
+            "memory_gib": 20,
+            "min_replicas": 2,
+            "model": "assistant",
+            "required_tokens_per_second": 1400
+          }
+        ]
+      },
+      "id": "demand",
+      "sha256": "38f4bf21199affc4fe0ece16089e7d0ebc80b30f0f90a8be5fa70cedae9e75ec"
+    },
+    "fleet": {
+      "data": [
+        {
+          "free_slots": 3,
+          "gpu": "L4",
+          "healthy": true,
+          "hourly_cents": 100,
+          "id": "gpu-node-a",
+          "memory_gib": 24,
+          "slots": 4
+        },
+        {
+          "free_slots": 2,
+          "gpu": "A100",
+          "healthy": true,
+          "hourly_cents": 250,
+          "id": "gpu-node-b",
+          "memory_gib": 80,
+          "slots": 2
+        }
+      ],
+      "id": "fleet",
+      "sha256": "f29a2655618908ce1ebd5405014fb62c8785d060b783472a0009b79b3b759aa8"
+    }
+  },
+  "hourly_cents": 200,
+  "missing": [],
+  "model": "qwen2.5:0.5b",
+  "planner": "ollama",
+  "ready": true,
+  "reason": "All workloads fit the benchmark, memory, latency and cost policy.",
+  "stop": "evidence_complete",
+  "trace": [
+    {
+      "event": "observed",
+      "source": "benchmarks",
+      "step": 1
+    },
+    {
+      "event": "observed",
+      "source": "demand",
+      "step": 2
+    },
+    {
+      "event": "observed",
+      "source": "fleet",
+      "step": 3
+    }
+  ],
+  "unmet": []
+}

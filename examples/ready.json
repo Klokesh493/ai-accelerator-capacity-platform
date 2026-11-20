@@ -1,0 +1,51 @@
+{
+  "now": 10000,
+  "max_age_seconds": 3600,
+  "max_hourly_cents": 500,
+  "nodes": [
+    {
+      "id": "gpu-node-a",
+      "gpu": "L4",
+      "slots": 4,
+      "free_slots": 3,
+      "memory_gib": 24,
+      "hourly_cents": 100,
+      "healthy": true
+    },
+    {
+      "id": "gpu-node-b",
+      "gpu": "A100",
+      "slots": 2,
+      "free_slots": 2,
+      "memory_gib": 80,
+      "hourly_cents": 250,
+      "healthy": true
+    }
+  ],
+  "benchmarks": [
+    {
+      "gpu": "L4",
+      "model": "assistant",
+      "tokens_per_second": 1000,
+      "p95_ms": 100,
+      "measured_at": 9900
+    },
+    {
+      "gpu": "A100",
+      "model": "assistant",
+      "tokens_per_second": 2200,
+      "p95_ms": 90,
+      "measured_at": 9900
+    }
+  ],
+  "workloads": [
+    {
+      "id": "chat",
+      "model": "assistant",
+      "memory_gib": 20,
+      "required_tokens_per_second": 1400,
+      "max_p95_ms": 120,
+      "min_replicas": 2
+    }
+  ]
+}

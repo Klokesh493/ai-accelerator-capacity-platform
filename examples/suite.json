@@ -1,0 +1,27 @@
+[
+  {
+    "name": "healthy",
+    "input": "healthy.json",
+    "expected": "capacity_ready"
+  },
+  {
+    "name": "cost-limit",
+    "input": "cost-limit.json",
+    "expected": "capacity_hold"
+  },
+  {
+    "name": "stale-benchmark",
+    "input": "stale-benchmark.json",
+    "expected": "capacity_hold"
+  },
+  {
+    "name": "latency-regression",
+    "input": "latency-regression.json",
+    "expected": "capacity_hold"
+  },
+  {
+    "name": "memory-exhaustion",
+    "input": "memory-exhaustion.json",
+    "expected": "capacity_hold"
+  }
+]
